@@ -12,14 +12,15 @@ I build the software that runs a freight brokerage at Fords Fast Freight. Loads 
 
 | | |
 |---|---|
-| **Load posting** | Posts loads to the DAT load board from a Teams command, by load, in bulk or for a whole pod. Certified by DAT for production load posting. Keeps live postings refreshed and records metrics per load. |
-| **Carrier inbound** | Owns the dispatch mailbox. Classifies carrier email, works out which load is being asked about and replies with the details. Negotiates rate over multiple turns inside limits the broker sets. Its rules are pinned by a regression suite built from real incidents. |
-| **Track and trace** | Opens the tracking thread the moment a rate confirmation is signed and follows the load to delivery on a status-driven cadence. One instance per operating pod, each with its own mailbox and database. |
-| **Check calls** | Voice calls to drivers and dispatchers for location and ETA, with SMS fallback. Separately, live FourKites coordinates every 30 minutes, dropped on the load in the TMS as map markers. |
-| **Market data** | Polls the major US freight markets on DAT every 15 minutes for van and reefer: loads, trucks, the ratio between them and posted rates. Markets are our own, built from 3-digit ZIP groupings. |
-| **Market intelligence** | Reads freight news, the calendar and the weather, and flags what is about to move the market before it shows on the board. |
-| **Data spine** | Every load from the TMS into Postgres: lane, both sides of the rate, every stop and charge line. Read-only. The base for rate prediction and a company-wide carrier CRM. |
-| **Control plane** | One dashboard for the company. Microsoft sign-in, invite only, scoped per pod. Every agent visible, switchable, and queryable through a read-only assistant. |
+| **Load distribution** | Certified DAT integration that publishes freight to the national load board and manages each posting through its life, refreshing it while the load is open. Every posting is tied back to its load, so time to cover and carrier response can be measured. |
+| **Carrier sales agent** | Stateful agent on the dispatch inbox. Classifies inbound carrier email, resolves it to a live load and negotiates rate across multi-turn threads within broker-defined bounds, then escalates to a broker at agreement. Behaviour is pinned by around a hundred regression tests drawn from production incidents. |
+| **Track and trace** | Event-driven. A signed rate confirmation opens the tracking thread, and a status-driven cadence follows the load to delivery. Idempotent on TMS event IDs and deployed as isolated per-pod instances, each with its own mailbox and datastore. |
+| **Voice and GPS check calls** | A voice agent calls drivers and dispatch with real-time speech recognition and an SMS fallback, then writes location and ETA back to the TMS. A parallel service turns live telematics into map-pinned check calls every 30 minutes. |
+| **Market data** | Append-only time series of supply and demand across the major US freight markets, sampled every 15 minutes: posted loads, posted trucks, load-to-truck ratio and rates. Markets are custom, defined from 3-digit ZIP clusters. |
+| **Market intelligence** | Leading-indicator agent over freight news, the event calendar and weather. Flags what is about to move capacity before it reaches the board. |
+| **Data platform** | Full ingestion of the TMS into Postgres at line-item depth: lanes, buy and sell rates, stops and charges. Read-only by design. Feeds rate modelling and a company-wide view of carriers by lane. |
+| **Document automation** | Mail agent over Microsoft 365 that reads message bodies and OCRs scanned attachments to route documents that rules engines cannot see. |
+| **Operations control plane** | One pane over every agent. Entra ID sign-in, invite-only access, pod-scoped tenancy, an audit trail, runtime controls, and a read-only assistant that answers questions over live operational data. |
 
 #### How I build
 

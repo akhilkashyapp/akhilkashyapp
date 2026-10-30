@@ -35,8 +35,8 @@
       <circle cy="120" r="6" fill="#0a0c0f" stroke="#8b949e" stroke-width="1.4"/>
       <text y="156" font-size="11" fill="#6e7681">01</text>
       <text class="sans" y="178" font-size="15" font-weight="600" letter-spacing="2" fill="#e6edf3">POST</text>
-      <text y="198" font-size="10.5" fill="#8b949e">DAT load board</text>
-      <text y="213" font-size="10.5" fill="#8b949e">from a Teams command</text>
+      <text y="198" font-size="10.5" fill="#8b949e">certified DAT integration</text>
+      <text y="213" font-size="10.5" fill="#8b949e">managed while open</text>
     </g>
     <g transform="translate(280 0)">
       <circle cy="120" r="6" fill="#0a0c0f" stroke="#8b949e" stroke-width="1.4"/>
