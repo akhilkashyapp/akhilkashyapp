@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="Akhil Kashyap, AI engineer, freight">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.035"/>
+    </pattern>
+    <linearGradient id="fade" x1="0" x2="1">
+      <stop offset="0" stop-color="#0a0c0f" stop-opacity="1"/>
+      <stop offset="0.08" stop-color="#0a0c0f" stop-opacity="0"/>
+      <stop offset="0.92" stop-color="#0a0c0f" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0a0c0f" stop-opacity="1"/>
+    </linearGradient>
+    <g id="truck">
+      <rect x="0" y="-34" width="104" height="26" fill="#0a0c0f" stroke="#8b949e" stroke-width="1.2"/>
+      <path d="M104 -11H108" stroke="#8b949e" stroke-width="1.2"/>
+      <path d="M108 -8V-29H127L140 -18H147V-8Z" fill="#0a0c0f" stroke="#8b949e" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M129 -26L137 -18H129Z" fill="#30363d"/>
+      <path d="M2 -8H147" stroke="#8b949e" stroke-width="1.2"/>
+      <g fill="#0a0c0f" stroke="#8b949e" stroke-width="1.2">
+        <circle cx="80" cy="-4" r="4"/><circle cx="91" cy="-4" r="4"/>
+        <circle cx="113" cy="-4" r="4"/><circle cx="123" cy="-4" r="4"/>
+        <circle cx="139" cy="-4" r="4"/>
+      </g>
+    </g>
+    <style>
+      .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif}
+      .mono{font-family:"SF Mono","JetBrains Mono",Menlo,Consolas,"Liberation Mono",monospace}
+      .edge{stroke:#30363d;stroke-width:1;fill:none}
+      .flow{stroke:#d29922;stroke-width:1.2;fill:none;stroke-dasharray:2 14;stroke-opacity:.7;animation:flow 2.4s linear infinite}
+      .flow.slow{animation-duration:4s}
+      .lane{stroke-dasharray:28 22;animation:lane 1.2s linear infinite}
+      .east{animation:east 30s linear infinite}
+      .west{animation:west 38s linear infinite}
+      @keyframes flow{to{stroke-dashoffset:-32}}
+      @keyframes lane{to{stroke-dashoffset:50}}
+      @keyframes east{from{transform:translateX(-260px)}to{transform:translateX(1500px)}}
+      @keyframes west{from{transform:translateX(1500px)}to{transform:translateX(-260px)}}
+    </style>
+  </defs>
+
+  <rect width="1280" height="400" rx="10" fill="#0a0c0f"/>
+  <rect width="1280" height="400" rx="10" fill="url(#grid)"/>
+
+  <!-- lane network -->
+  <g>
+    <path class="edge" d="M690 72L820 140M660 200L740 222M740 222L900 232M660 200L820 140M820 140L930 152M930 152L1010 110M900 232L990 200M990 200L1080 232M1080 232L1140 182M1140 182L1192 112M1010 110L1192 112M900 232L930 152M1010 110L990 200"/>
+    <path class="flow" d="M660 200L820 140L930 152L1010 110L1192 112"/>
+    <path class="flow slow" d="M740 222L900 232L990 200L1080 232L1140 182"/>
+    <path class="flow slow" d="M690 72L820 140"/>
+    <g fill="#c9d1d9">
+      <circle cx="690" cy="72" r="2.5"/><circle cx="660" cy="200" r="2.5"/><circle cx="740" cy="222" r="2.5"/>
+      <circle cx="820" cy="140" r="2.5"/><circle cx="930" cy="152" r="2.5"/><circle cx="900" cy="232" r="2.5"/>
+      <circle cx="1010" cy="110" r="2.5"/><circle cx="990" cy="200" r="2.5"/><circle cx="1080" cy="232" r="2.5"/>
+      <circle cx="1140" cy="182" r="2.5"/><circle cx="1192" cy="112" r="2.5"/>
+    </g>
+    <g fill="none" stroke="#d29922">
+      <circle cx="1010" cy="110" r="3"><animate attributeName="r" values="3;14" dur="2.8s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".8;0" dur="2.8s" repeatCount="indefinite"/></circle>
+      <circle cx="1080" cy="232" r="3"><animate attributeName="r" values="3;14" dur="2.8s" begin="1.4s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".8;0" dur="2.8s" begin="1.4s" repeatCount="indefinite"/></circle>
+    </g>
+    <g class="mono" font-size="10" fill="#6e7681" letter-spacing="1">
+      <text x="698" y="68">SEA</text><text x="640" y="218">LAX</text><text x="732" y="242">PHX</text>
+      <text x="808" y="130">DEN</text><text x="922" y="142">KC</text><text x="886" y="252">DAL</text>
+      <text x="1000" y="98">CHI</text><text x="1000" y="220">MEM</text><text x="1070" y="252">ATL</text>
+      <text x="1150" y="190">CLT</text><text x="1200" y="108">NJ</text>
+    </g>
+  </g>
+
+  <!-- identity -->
+  <g>
+    <text class="mono" xml:space="preserve" x="64" y="98" font-size="12" letter-spacing="3" fill="#6e7681">FORDS FAST FREIGHT  /  AI ENGINEERING</text>
+    <text class="sans" x="62" y="164" font-size="54" font-weight="600" letter-spacing="5" fill="#e6edf3">AKHIL KASHYAP</text>
+    <text class="sans" x="64" y="204" font-size="18" fill="#8b949e">Agents that post, quote, negotiate and track freight.</text>
+    <g class="mono" font-size="11" letter-spacing="2" fill="#8b949e">
+      <circle cx="68" cy="240" r="3" fill="#d29922"><animate attributeName="fill-opacity" values="1;.25;1" dur="2s" repeatCount="indefinite"/></circle>
+      <text xml:space="preserve" x="80" y="244">LIVE  POSTING  INBOUND  TRACKING  CHECK CALLS  MARKET DATA</text>
+    </g>
+  </g>
+
+  <!-- highway -->
+  <g>
+    <path d="M0 286H1280M0 386H1280" stroke="#30363d" stroke-width="1"/>
+    <path class="lane" d="M0 336H1280" stroke="#3d444d" stroke-width="2"/>
+    <g transform="translate(0 326)">
+      <g class="east" style="animation-delay:-6s">
+        <use href="#truck"/>
+        <path d="M60 -38V-50" stroke="#d29922" stroke-width="1"/>
+        <text class="mono" xml:space="preserve" x="66" y="-46" font-size="10" fill="#8b949e" letter-spacing="1">LD 48213  CHI &gt; ATL  ETA 14:20</text>
+      </g>
+      <g class="east" style="animation-delay:-21s"><use href="#truck"/></g>
+    </g>
+    <g transform="translate(0 378)">
+      <g class="west" style="animation-delay:-14s">
+        <g transform="scale(-1 1) translate(-147 0)"><use href="#truck"/></g>
+      </g>
+      <g class="west" style="animation-delay:-33s">
+        <g transform="scale(-1 1) translate(-147 0)"><use href="#truck"/></g>
+      </g>
+    </g>
+  </g>
+
+  <rect y="270" width="1280" height="130" rx="10" fill="url(#fade)"/>
+</svg>
