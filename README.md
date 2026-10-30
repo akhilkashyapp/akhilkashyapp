@@ -5,12 +5,6 @@
 I build the software that runs a freight brokerage at Fords Fast Freight. Loads get posted, carriers get answered, rates get negotiated, trucks get tracked and the TMS stays current, with people stepping in where judgment is needed. Most of it runs in production every day.
 
 <p align="center">
-  <img src="assets/results.svg" width="100%" alt="Results: $29,811 verified below the rate ceiling across 223 loads">
-</p>
-
-<sub>Savings are measured against the broker's ceiling rate on each load and checked against what was actually paid in the TMS, net of loads that came in over the ceiling. Only loads run with the carrier the agent negotiated with are counted. Negotiations from August 6 to October 29, 2026.</sub>
-
-<p align="center">
   <img src="assets/lifecycle.svg" width="100%" alt="One load, end to end: post, quote, negotiate, dispatch, track, deliver, learn">
 </p>
 
@@ -19,7 +13,7 @@ I build the software that runs a freight brokerage at Fords Fast Freight. Loads 
 | | |
 |---|---|
 | **Load distribution** | Certified DAT integration that publishes freight to the national load board and manages each posting through its life, refreshing it while the load is open. Every posting is tied back to its load, so time to cover and carrier response can be measured. |
-| **Carrier sales agent** | Stateful agent on the dispatch inbox. Classifies inbound carrier email, resolves it to a live load and negotiates rate across multi-turn threads within broker-defined bounds, then escalates to a broker at agreement. Behaviour is pinned by around a hundred regression tests drawn from production incidents. |
+| **Carrier sales agent** | Stateful agent on the dispatch inbox. Classifies inbound carrier email, resolves it to a live load and negotiates rate across multi-turn threads within broker-defined bounds, then escalates to a broker at agreement. In its first 84 days on one pod, loads it closed ran $29,811 under the broker's ceiling, measured against what was actually paid. Behaviour is pinned by around a hundred regression tests drawn from production incidents. |
 | **Track and trace** | Event-driven. A signed rate confirmation opens the tracking thread, and a status-driven cadence follows the load to delivery. Idempotent on TMS event IDs and deployed as isolated per-pod instances, each with its own mailbox and datastore. |
 | **Voice and GPS check calls** | A voice agent calls drivers and dispatch with real-time speech recognition and an SMS fallback, then writes location and ETA back to the TMS. A parallel service turns live telematics into map-pinned check calls every 30 minutes. |
 | **Market data** | Append-only time series of supply and demand across the major US freight markets, sampled every 15 minutes: posted loads, posted trucks, load-to-truck ratio and rates. Markets are custom, defined from 3-digit ZIP clusters. |
