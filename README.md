@@ -5,6 +5,12 @@
 I build the software that runs a freight brokerage at Fords Fast Freight. Loads get posted, carriers get answered, rates get negotiated, trucks get tracked and the TMS stays current, with people stepping in where judgment is needed. Most of it runs in production every day.
 
 <p align="center">
+  <img src="assets/results.svg" width="100%" alt="Results: $29,811 verified below the rate ceiling across 223 loads">
+</p>
+
+<sub>Savings are measured against the broker's ceiling rate on each load and checked against what was actually paid in the TMS, net of loads that came in over the ceiling. Only loads run with the carrier the agent negotiated with are counted. Negotiations from August 6 to October 29, 2026.</sub>
+
+<p align="center">
   <img src="assets/lifecycle.svg" width="100%" alt="One load, end to end: post, quote, negotiate, dispatch, track, deliver, learn">
 </p>
 
